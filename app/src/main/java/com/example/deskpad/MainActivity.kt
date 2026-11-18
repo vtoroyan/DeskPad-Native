@@ -89,7 +89,7 @@ class MainActivity : Activity(), DisplayManager.DisplayListener {
         val testInput = EditText(this).apply {
             hint = "Tap here, then type with DeskPad Keyboard"
             textSize = 15f
-            singleLine = false
+            setSingleLine(false)
             minLines = 2
             maxLines = 3
             inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_CAP_SENTENCES
