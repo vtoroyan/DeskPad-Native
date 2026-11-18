@@ -5,9 +5,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
 }
 
-// Release signing is loaded from a gitignored keystore.properties (see keystore.properties.example),
-// so no signing secrets live in the repo. When it's absent, debug builds and an unsigned release
-// still work.
 val keystorePropsFile = rootProject.file("keystore.properties")
 val hasKeystore = keystorePropsFile.exists()
 val keystoreProps = Properties().apply {
@@ -22,8 +19,8 @@ android {
         applicationId = "com.example.deskpad"
         minSdk = 30
         targetSdk = 35
-        versionCode = 1
-        versionName = "0.2-a11y"
+        versionCode = 2
+        versionName = "0.3.0-native-preview"
     }
 
     buildFeatures {
@@ -59,6 +56,5 @@ android {
 }
 
 dependencies {
-    // No Shizuku / no root: privilege comes from a user-enabled AccessibilityService.
     testImplementation("junit:junit:4.13.2")
 }
